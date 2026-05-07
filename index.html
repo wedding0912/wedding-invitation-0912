@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta property="og:title" content="남국 ❤️ 지선 결혼합니다">
+<meta property="og:description" content="2026년 9월 12일 (토) 오후 12시 30분 · 파티움하우스 수원">
+<!-- ★ 카카오톡 공유 시 보이는 썸네일 이미지 (본인의 사진 URL로 변경하세요) ★ -->
+<meta property="og:image" content="gallery_01.jpg=80&w=800&auto=format&fit=crop">
+<title>남국 ♥ 지선 결혼합니다</title>
+<meta name="theme-color" content="#EDE6DC">
+
+<link rel="icon" href="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop" type="image/jpeg">
+<link rel="apple-touch-icon" href="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop">
+
+<script>
+  (function() {
+    var today = new Date();
+    var weddingDate = new Date('2030-12-25T13:00:00+09:00');
+    var showStart = new Date(weddingDate);
+    showStart.setDate(weddingDate.getDate() - 60);
+    showStart.setHours(0, 0, 0, 0);
+    var showEnd = new Date('2030-12-26T00:00:00+09:00');
+    if (today >= showEnd) {
+      document.documentElement.classList.add('post-wedding');
+    } else if (today < showStart) {
+      document.documentElement.classList.add('pre-wedding-mask');
+      window.__regOpenMsg = (showStart.getMonth() + 1) + '월 ' + showStart.getDate() + '일부터 확인 가능합니다';
+    }
+  })();
+</script>
+
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ── RESET & VARIABLES ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --ink:#2A2520;
+  --cream:#FAF7F2;
+  --rose:#B8836A;
+  --rose-lt:#D4A892;
+  --sage:#7A9080;
+  --sage-lt:#9DB4A6;
+  --muted:#9A8E88;
+  --line:#E5DDD4;
+  --bg2:#F2EDE5;
+  --bg3:#EBE5DA;
+  --white:#FDFAF7;
+}
+
+/* ── LAYOUT BASE ── */
+html,body{width:100%;background:#D8D2C8;overscroll-behavior-y:none;}
+body{display:flex;justify-content:center;font-family:'Noto Serif KR',serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+.wrap{width:100%;max-width:430px;background:var(--cream);min-height:100vh;position:relative;box-shadow:0 0 80px rgba(0,0,0,0.14);overflow-x:hidden;}
+
+/* ── PRIVACY UTILS ── */
+.post-wedding .hide-privacy { display: none !important; }
+
+/* ── TOAST & LOADER ── */
+#toast{visibility:hidden;position:fixed;z-index:2000;left:50%;bottom:36px;transform:translateX(-50%);background:var(--ink);color:var(--white);font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:400;letter-spacing:.05em;padding:15px 28px;white-space:nowrap;border-bottom:2px solid var(--rose);box-shadow:0 8px 28px rgba(0,0,0,.18);border-radius:4px;}
+#toast.show{visibility:visible;animation:toastIn .35s ease,toastOut .35s ease 2.5s forwards;}
+@keyframes toastIn{from{bottom:10px;opacity:0}to{bottom:36px;opacity:1}}
+@keyframes toastOut{from{bottom:36px;opacity:1}to{bottom:10px;opacity:0}}
+
+#loader-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(42,37,32,.82);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);flex-direction:column;align-items:center;justify-content:center;color:var(--white);}
+#loader-overlay.active{display:flex;}
+.spinner{border:3px solid rgba(253,250,245,.2);border-top:3px solid var(--rose-lt);border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin-bottom:20px;}
+@keyframes spin{100%{transform:rotate(360deg)}}
+
+/* ★ 부드럽게 까딱거리는 배경음악 스윙 애니메이션 ★ */
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+#loader-text{font-family:'Noto Sans KR',sans-serif;font-size:14px;letter-spacing:.05em;font-weight:300;}
+
+/* ── BGM BUTTON ── */
+.bgm-btn{position:fixed;bottom:24px;left:18px;z-index:500;background:rgba(250,247,242,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);padding:10px 16px;display:flex;align-items:center;gap:8px;cursor:pointer;transition:transform .2s;font-family:'Noto Sans KR',sans-serif;border-radius:20px;}
+.bgm-btn:active{transform:scale(.95);}
+.bgm-btn i{font-size:13px;color:var(--rose);}
+.bgm-btn span{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);font-weight:500;}
+
+/* ── SCROLL TO TOP ── */
+#top-btn{display:none;position:fixed;bottom:24px;right:18px;z-index:500;width:44px;height:44px;border-radius:50%;background:rgba(250,247,242,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);cursor:pointer;color:var(--ink);font-size:14px;transition:opacity .3s,transform .2s;box-shadow:0 4px 16px rgba(0,0,0,.10);align-items:center;justify-content:center;}
+#top-btn.visible{display:flex;}
+#top-btn:active{transform:scale(.92);}
+
+/* ── HERO SECTION ── */
+.hero{position:relative;width:100%;height:100vh;height:100dvh;overflow:hidden;}
+
+/* ★ 메인 웨딩 사진 (변경 가능한 부분) ★ */
+.hero-photo{
+  position:absolute;inset:0;
+  background-color:#EDE8E0;
+  /* 아래 url 주소를 본인의 메인 사진 파일명이나 웹 링크로 수정하세요 */
+  background-image:url('gallery_01.jpg=80&w=800&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center 30%;
+}
+
+.hero-veil{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(237,232,224,.15) 0%,rgba(42,37,32,.25) 55%,rgba(42,37,32,.82) 100%);}
+#petal-c{position:absolute;inset:0;pointer-events:none;z-index:5;}
+.hero-body{position:absolute;bottom:0;left:0;right:0;padding:0 32px 56px;text-align:center;color:var(--white);z-index:10;}
+.hero-body>*{animation:fadeUp 1.1s ease forwards;opacity:0;}
+.hero-eyebrow{animation-delay:.25s!important;font-family:'Noto Serif KR',serif;font-size:12.5px;letter-spacing:.45em;color:rgba(253,250,247,.65);font-weight:300;margin-bottom:20px;text-transform:uppercase;}
+.hero-names{animation-delay:.55s!important;font-family:'Gowun Batang',serif;font-size:50px;font-weight:400;letter-spacing:.22em;color:var(--white);line-height:1;margin-bottom:10px;}
+.hero-amp{font-family:'Playfair Display',serif;font-size:32px;font-style:italic;color:var(--rose-lt);vertical-align:middle;margin:0 4px;}
+.hero-tagline{animation-delay:.72s!important;font-family:'Noto Serif KR',serif;font-size:13.5px;font-weight:300;color:rgba(253,250,247,.7);line-height:2.2;margin-bottom:36px;letter-spacing:.05em;}
+.hero-info-box{animation-delay:.95s!important;display:inline-block;padding:22px 36px;border-top:1px solid rgba(184,131,106,.5);border-bottom:1px solid rgba(184,131,106,.5);position:relative;margin-bottom:0;}
+.hero-date{font-family:'Noto Sans KR',sans-serif;font-size:16px;font-weight:500;letter-spacing:.16em;color:rgba(253,250,247,.96);margin-bottom:8px;}
+.hero-date-sub{font-family:'Playfair Display',serif;font-size:12px;font-style:italic;letter-spacing:.25em;color:rgba(253,250,247,.5);margin-bottom:12px;}
+.hero-divider-dot{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:12px;}
+.hero-divider-dot span{display:block;width:3px;height:3px;border-radius:50%;background:rgba(212,168,146,.6);}
+.hero-divider-dot span:nth-child(2){width:5px;height:5px;background:rgba(212,168,146,.8);}
+.hero-venue{font-family:'Noto Sans KR',sans-serif;font-size:14px;letter-spacing:.1em;color:rgba(253,250,247,.85);font-weight:400;}
+.hero-venue-sub{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.06em;color:rgba(253,250,247,.6);font-weight:300;margin-top:4px;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* 꽃잎 파티클 */
+.petal{position:absolute;pointer-events:none;border-radius:50% 0 50% 0;animation:petalFall linear infinite;}
+@keyframes petalFall{0%{transform:translate3d(0,-20px,0) rotate(0deg);opacity:0}8%{opacity:.7}90%{opacity:.5}100%{transform:translate3d(var(--px),100vh,0) rotate(720deg);opacity:0}}
+
+/* ── COMMON SECTIONS & ORNAMENTS ── */
+section{padding:80px 32px;border-bottom:.5px solid var(--line);}
+.orn{display:flex;align-items:center;justify-content:center;margin:0 auto;}
+.orn::before,.orn::after{content:'';flex:1;height:.5px;}
+.orn::before{background:linear-gradient(to right,transparent,var(--rose-lt));}
+.orn::after{background:linear-gradient(to left,transparent,var(--rose-lt));}
+.orn i{font-size:6px;color:var(--rose);margin:0 14px;opacity:.75;}
+
+/* ── 섹션 헤더 ── */
+.lbl{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:36px;gap:8px;}
+.lbl-kr{font-family:'Noto Serif KR',serif;font-size:19px;color:var(--ink);letter-spacing:.06em;font-weight:500;}
+.lbl-en{font-family:'Playfair Display',serif;font-size:12px;font-style:italic;letter-spacing:.35em;color:var(--rose);text-transform:uppercase;}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease;}
+.rv.in{opacity:1;transform:none;}
+.rv.d1{transition-delay:.1s;}.rv.d2{transition-delay:.2s;}.rv.d3{transition-delay:.3s;}
+
+/* ── INVITATION ── */
+.inv-text{font-family:'Noto Serif KR',serif;font-size:17px;line-height:2.8;font-weight:300;color:var(--ink);text-align:center;word-break:keep-all;}
+.inv-families{margin-top:52px;text-align:center;}
+.fam-row{display:flex;align-items:baseline;justify-content:center;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.fam-par{font-size:15px;color:var(--muted);font-weight:300;}
+.fam-rel{font-family:'Noto Sans KR',sans-serif;font-size:13px;color:var(--muted);font-weight:300;}
+.fam-name{font-family:'Gowun Batang',serif;font-size:28px;font-weight:700;color:var(--ink);letter-spacing:.1em;}
+
+/* ── STORY TIMELINE ── */
+.story-wrap{position:relative;padding-left:28px;}
+.story-line{position:absolute;left:10px;top:12px;bottom:12px;width:1px;background:linear-gradient(to bottom,var(--rose-lt),var(--sage-lt));z-index:0;}
+.story-node{position:relative;margin-bottom:38px;}
+.story-node:last-child{margin-bottom:0;}
+.story-nd{position:absolute;left:-23px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--cream);border:1.5px solid var(--rose-lt);z-index:1;}
+.story-nd.final{background:var(--rose);border-color:var(--rose);}
+.story-when{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;letter-spacing:.15em;color:var(--rose);margin-bottom:6px;}
+.story-ttl{font-family:'Noto Serif KR',serif;font-size:16px;font-weight:500;color:var(--ink);margin-bottom:8px;}
+.story-desc{font-family:'Noto Sans KR',sans-serif;font-size:13.5px;line-height:2.2;color:var(--muted);font-weight:300;word-break:keep-all;}
+
+/* ── CALENDAR ── */
+.lbl-cal{display:block;text-align:center;margin-bottom:36px;}
+.lbl-cal-main{font-family:'Noto Serif KR',serif;font-size:16px;letter-spacing:.32em;color:var(--rose);font-weight:500;display:block;margin-bottom:8px;}
+.lbl-cal-sub{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;letter-spacing:.35em;color:var(--muted);display:block;}
+.cal-wrap{max-width:296px;margin:0 auto;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);}
+.cday-lbl{text-align:center;font-family:'Noto Sans KR',sans-serif;font-size:10px;letter-spacing:.12em;color:var(--muted);font-weight:500;padding-bottom:18px;text-transform:uppercase;}
+.cday-lbl.s{color:#C04B30;}
+.cday{text-align:center;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:400;color:var(--ink);padding:9px 0;}
+.cday.s{color:#C04B30;}.cday.sa{color:var(--muted);}
+.cday.w{background:var(--rose);color:var(--white);font-weight:500;position:relative;border-radius:50%;}
+.cday.w::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%);width:3px;height:3px;background:rgba(255,255,255,.6);border-radius:50%;}
+.dday-t{font-family:'Noto Sans KR',sans-serif;font-size:14px;text-align:center;color:var(--muted);margin-top:36px;font-weight:300;letter-spacing:.04em;}
+.dday-t strong{color:var(--rose);font-size:20px;font-family:'Playfair Display',serif;font-weight:500;margin:0 4px;}
+
+.cal-btn-wrap{display:flex;justify-content:center;margin-top:24px;}
+.cal-btn{background:var(--white);border:1px solid var(--line);color:var(--ink);padding:11px 22px;border-radius:30px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:500;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;box-shadow:0 2px 8px rgba(0,0,0,0.04);letter-spacing:0.05em;}
+.cal-btn:active{transform:scale(0.96);background:var(--cream);}
+.cal-btn i{color:var(--rose);font-size:15px;}
+
+/* ── PROGRAM ── */
+.order-list{list-style:none;max-width:310px;margin:0 auto;}
+.order-list li{display:flex;align-items:flex-start;gap:18px;padding:16px 0;border-bottom:.5px dashed var(--line);}
+.order-list li:last-child{border-bottom:none;}
+.order-time{font-family:'Playfair Display',serif;font-size:17px;font-weight:500;color:var(--rose);min-width:52px;letter-spacing:.02em;padding-top:2px;}
+.order-txt{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--ink);font-weight:400;line-height:1.6;}
+.order-sub{font-size:13px;color:var(--muted);display:block;margin-top:5px;font-weight:300;line-height:1.8;word-break:keep-all;}
+.order-list li.highlight .order-time{color:var(--ink);}
+.order-list li.highlight{background:var(--bg2);margin:0 -8px;padding:16px 8px;border-radius:6px;border-bottom:none;}
+.buffet-highlight{display:block;margin-top:10px;padding:11px 14px;background:rgba(184,131,106,.08);border:.5px solid rgba(184,131,106,.3);border-radius:5px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:var(--ink);font-weight:400;line-height:1.8;}
+.buffet-highlight strong{color:var(--rose);}
+
+/* ── RSVP ── */
+.rsvp-sec{background:var(--bg3);}
+.rsvp-sec .lbl-kr{color:var(--ink);}
+.rsvp-sec .lbl-en{color:var(--rose);}
+.rsvp-text{font-family:'Noto Serif KR',serif;font-size:16px;line-height:2.6;text-align:center;color:var(--muted);font-weight:300;word-break:keep-all;margin-bottom:40px;}
+.btn-solid{display:block;width:100%;background:var(--rose);color:var(--white);border:none;padding:18px 24px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:500;letter-spacing:.2em;cursor:pointer;transition:all .3s;text-align:center;border-radius:4px;}
+.btn-solid:hover{background:var(--rose-lt);}
+.btn-solid:active{transform:scale(.98);}
+
+/* ── GALLERY ── */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.gal-item{aspect-ratio:1;overflow:hidden;cursor:pointer;position:relative;background:var(--bg2);}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.25,.1,.25,1);display:block;}
+.gal-item:hover img{transform:scale(1.06);}
+.gal-item::after{content:'';position:absolute;inset:0;background:rgba(184,131,106,0);transition:background .3s;pointer-events:none;}
+.gal-item:hover::after{background:rgba(184,131,106,.12);}
+.gal-hint{font-family:'Noto Sans KR',sans-serif;font-size:13px;color:var(--muted);text-align:center;margin-top:24px;font-weight:300;letter-spacing:.1em;}
+
+/* ── IMAGE MODAL ── */
+#img-modal{display:none;position:fixed;inset:0;z-index:900;background:rgba(10,8,7,.97);flex-direction:column;align-items:center;justify-content:center;}
+#img-modal.active{display:flex;}
+#img-modal .m-close{position:absolute;top:20px;right:20px;color:rgba(253,250,245,.55);font-size:24px;cursor:pointer;padding:12px;background:none;border:none;}
+#modal-pnum{position:absolute;top:26px;left:50%;transform:translateX(-50%);font-family:'Playfair Display',serif;font-size:14px;font-style:italic;letter-spacing:.2em;color:rgba(253,250,245,.45);}
+#modal-ta{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:64px 16px;}
+#modal-img{max-width:100%;max-height:85vh;object-fit:contain;}
+#img-modal .m-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:'Noto Sans KR',sans-serif;font-size:12px;color:rgba(253,250,245,.35);letter-spacing:.14em;white-space:nowrap;}
+
+/* ── LOCATION ── */
+.venue-name-box{text-align:center;margin-bottom:32px;}
+.venue-name-kr{font-family:'Gowun Batang',serif;font-size:24px;font-weight:700;color:var(--ink);letter-spacing:.06em;display:block;margin-bottom:6px;}
+.venue-name-hall{font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:400;color:var(--rose);letter-spacing:.15em;display:inline-block;padding:4px 12px;border:.5px solid rgba(184,131,106,.4);border-radius:20px;}
+.venue-addr{font-family:'Noto Sans KR',sans-serif;font-size:14.5px;color:var(--muted);text-align:center;margin-bottom:32px;line-height:2.1;font-weight:300;}
+
+.map-wrap{position:relative;width:100%;height:320px;margin-bottom:20px;}
+.map-f{width:100%;height:100%;border:.5px solid var(--line);overflow:hidden;display:block;}
+.map-overlay{position:absolute;inset:0;background:rgba(42,37,32,.48);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;cursor:pointer;transition:opacity .3s;z-index:2;}
+.map-overlay i{font-size:26px;color:rgba(253,250,247,.85);}
+.map-overlay p{font-family:'Noto Sans KR',sans-serif;font-size:13px;color:rgba(253,250,247,.85);font-weight:400;letter-spacing:.04em;text-align:center;line-height:2;}
+.map-overlay.hidden{opacity:0;pointer-events:none;}
+.map-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:40px;}
+.mbtn{padding:14px 6px;font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:500;text-align:center;cursor:pointer;transition:opacity .2s;text-decoration:none;display:block;border:none;border-radius:4px;}
+.mbtn:active{opacity:.75;}
+.mbtn.ka{background:#FEE500;color:#1A1714;}
+.mbtn.na{background:#03C75A;color:#fff;}
+.mbtn.tm{background:var(--ink);color:var(--white);}
+
+/* ── TRANSPORT BOXES ── */
+.trans-box{background:var(--white);border:.5px solid var(--line);border-radius:8px;padding:22px 20px;margin-bottom:16px;box-shadow:0 2px 10px rgba(0,0,0,0.03);}
+.trans-hdr{font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:500;color:var(--ink);margin-bottom:18px;display:flex;align-items:center;gap:8px;border-bottom:.5px solid var(--line);padding-bottom:12px;}
+.trans-hdr i{color:var(--rose);font-size:14px;}
+.badge{display:inline-block;padding:3px 7px;border-radius:4px;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:500;color:#fff;margin-right:6px;vertical-align:text-bottom;letter-spacing:.02em;}
+.bdg-1{background:#0052A4;}
+.bdg-2{background:#009D3E;}
+.bdg-bus-b{background:#2C6EE5;}
+.bdg-bus-g{background:#53B332;}
+.bdg-bus-r{background:#E60012;}
+.trans-row{display:flex;align-items:flex-start;margin-bottom:16px;font-size:14.5px;line-height:1.6;color:var(--ink);font-family:'Noto Sans KR',sans-serif;font-weight:400;word-break:keep-all;}
+.trans-row:last-child{margin-bottom:0;}
+.trans-row .dot{color:var(--rose);margin-right:10px;font-weight:bold;font-size:16px;line-height:1.4;}
+.trans-desc{color:var(--muted);font-size:13.5px;margin-top:4px;font-weight:300;line-height:1.8;}
+
+/* ── 주차 안내 (개선) ── */
+.pk-title{font-family:'Noto Sans KR',sans-serif;font-size:14.5px;font-weight:500;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.pk-title i{color:var(--sage);font-size:13px;}
+.pk-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:18px;}
+.pk-card-sm{background:var(--cream);border:.5px solid var(--line);border-radius:8px;padding:16px 14px;text-align:center;}
+.pk-card-sm .pk-icon{font-size:20px;margin-bottom:8px;}
+.pk-card-sm .pk-label{font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:500;color:var(--ink);margin-bottom:4px;display:block;}
+.pk-card-sm .pk-detail-sm{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:var(--muted);font-weight:300;line-height:1.7;}
+.pk-free-badge{display:inline-block;background:rgba(122,144,128,.15);border:.5px solid rgba(122,144,128,.4);color:var(--sage);border-radius:20px;padding:4px 10px;font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:500;letter-spacing:.04em;margin-bottom:14px;}
+.pk-note{background:rgba(184,131,106,.06);border:.5px solid rgba(184,131,106,.25);border-radius:6px;padding:14px 16px;}
+.pk-note p{font-family:'Noto Sans KR',sans-serif;font-size:13px;color:var(--ink);line-height:1.85;font-weight:300;word-break:keep-all;}
+.pk-note strong{color:var(--rose);font-weight:500;}
+
+/* ── 전세버스 ── */
+.bus-card{background:rgba(122,144,128,.07);border:.5px solid rgba(122,144,128,.35);border-radius:8px;padding:20px;}
+.bus-card-title{font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:500;color:var(--sage);margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.bus-info-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--ink);font-weight:300;}
+.bus-info-row:last-child{margin-bottom:0;}
+.bus-info-key{color:var(--muted);min-width:36px;font-size:13px;padding-top:1px;}
+.bus-return{background:rgba(184,131,106,.07);border:.5px solid rgba(184,131,106,.25);border-radius:6px;padding:16px 18px;margin-top:18px;}
+.bus-return-t{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:500;color:var(--rose);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.bus-return p{font-family:'Noto Sans KR',sans-serif;font-size:14px;line-height:2.1;color:var(--ink);font-weight:300;}
+
+/* ── REGISTRY ── */
+.reg-sec{background:var(--bg2);}
+.acc-item{border:.5px solid var(--line);margin-bottom:10px;overflow:hidden;border-radius:6px;}
+.acc-btn{width:100%;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;background:var(--white);border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;font-weight:500;color:var(--ink);transition:background .2s;}
+.acc-btn:hover{background:var(--cream);}
+.acc-btn i{font-size:12px;color:var(--rose);transition:transform .3s;}
+.acc-btn.open i{transform:rotate(45deg);}
+.acc-body{display:none;background:var(--cream);border-top:.5px solid var(--line);padding:24px 20px;}
+.acc-row{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:.5px dashed var(--line);}
+.acc-row:last-child{border-bottom:none;padding-bottom:0;}
+.acc-row:first-child{padding-top:0;}
+.acc-lbl{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:var(--muted);font-weight:400;margin-bottom:6px;letter-spacing:.04em;}
+.acc-num{font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:500;color:var(--ink);letter-spacing:.08em;}
+.acc-btns{display:flex;gap:6px;align-items:center;flex-shrink:0;}
+.copy-btn{padding:9px 14px;border:.5px solid var(--line);background:var(--white);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:500;color:var(--muted);cursor:pointer;transition:all .2s;white-space:nowrap;border-radius:4px;}
+.copy-btn.f{background:var(--rose);color:var(--white);border-color:var(--rose);}
+.copy-btn:active{transform:scale(.96);}
+.kpay-btn{display:inline-flex;align-items:center;gap:4px;padding:9px 12px;background:#FEE500;border:none;border-radius:4px;font-family:'Noto Sans KR',sans-serif;font-size:12px;font-weight:600;color:#191600;cursor:pointer;white-space:nowrap;transition:opacity .2s;}
+.kpay-btn:active{opacity:.75;}
+
+/* ── PHOTO SHARE ── */
+.share-card{background:var(--white);border:.5px solid var(--line);padding:40px 28px;text-align:center;}
+.share-p{font-family:'Noto Sans KR',sans-serif;font-size:14.5px;line-height:2.2;color:var(--muted);font-weight:300;word-break:keep-all;margin-bottom:28px;}
+.up-btn{width:100%;background:var(--cream);border:.5px solid var(--line);padding:16px;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;font-weight:500;color:var(--ink);letter-spacing:.05em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:all .2s;border-radius:4px;}
+.up-btn:active{transform:scale(.98);background:var(--bg2);}
+.up-btn i{color:var(--rose);font-size:16px;}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
+.foot-quote{font-family:'Noto Serif KR',serif;font-size:14.5px;line-height:2.6;color:rgba(253,250,247,.55);font-weight:300;word-break:keep-all;margin-bottom:36px;}
+.foot-quote strong{color:rgba(253,250,247,.85);font-weight:400;}
+.foot-credit{font-family:'Playfair Display',serif;font-size:11px;font-style:italic;color:rgba(253,250,247,.2);letter-spacing:.06em;margin-bottom:52px;line-height:2;}
+.foot-share{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:272px;margin:0 auto 12px;padding:16px 20px;background:transparent;border:1px solid rgba(253,250,247,.18);color:rgba(253,250,247,.75);font-family:'Noto Sans KR',sans-serif;font-size:13.5px;font-weight:400;letter-spacing:.1em;cursor:pointer;transition:all .2s;border-radius:30px;}
+.foot-share:hover{border-color:rgba(253,250,247,.38);color:var(--white);}
+.foot-share:active{transform:scale(.98);}
+.foot-copy{margin-top:60px;font-family:'Playfair Display',serif;font-size:12px;font-style:italic;letter-spacing:.3em;color:rgba(253,250,247,.25);}
+
+/* ── RSVP MODAL ── */
+#rsvp-modal{display:none;position:fixed;inset:0;z-index:600;background:rgba(42,37,32,.78);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:24px 16px;}
+#rsvp-modal.open{display:flex;}
+.m-box{background:var(--cream);width:100%;max-width:380px;max-height:88vh;display:flex;flex-direction:column;border:.5px solid var(--line);box-shadow:0 28px 64px rgba(0,0,0,.26);border-radius:8px;overflow:hidden;}
+.m-head{padding:22px 24px;border-bottom:.5px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:var(--cream);flex-shrink:0;}
+.m-head h3{font-family:'Playfair Display',serif;font-size:20px;font-weight:500;font-style:italic;color:var(--ink);letter-spacing:.06em;}
+.m-head button{background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer;padding:4px;}
+.m-scroll{overflow-y:auto;padding:24px;flex:1;background:var(--white);overscroll-behavior:contain;}
+.fg{margin-bottom:24px;}
+.fl{display:block;font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.15em;color:var(--ink);font-weight:500;margin-bottom:10px;}
+.frg{display:flex;gap:8px;}
+.frg input{display:none;}
+.frg label{flex:1;text-align:center;border:1px solid var(--line);padding:14px 8px;font-family:'Noto Sans KR',sans-serif;font-size:14px;color:var(--muted);cursor:pointer;transition:all .2s;border-radius:4px;background:var(--cream);}
+.frg input:checked+label{background:var(--rose);border-color:var(--rose);color:var(--white);font-weight:500;}
+.fi{width:100%;border:1px solid var(--line);background:var(--cream);padding:14px;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;color:var(--ink);outline:none;transition:border-color .2s;text-align:center;border-radius:4px;}
+.fi:focus{border-color:var(--rose);}
+.fs{width:100%;border:1px solid var(--line);background:var(--cream);padding:14px;font-family:'Noto Sans KR',sans-serif;font-size:14.5px;color:var(--ink);outline:none;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239A8E88'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-color:var(--cream);border-radius:4px;text-align:center;text-align-last:center;}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.sub-btn{width:100%;background:var(--rose);color:var(--white);border:none;padding:18px;font-family:'Noto Sans KR',sans-serif;font-size:15px;font-weight:500;letter-spacing:.2em;cursor:pointer;transition:opacity .2s;margin-top:10px;border-radius:4px;}
+.sub-btn:disabled{opacity:.55;cursor:not-allowed;}
+.sub-btn:active{opacity:.8;}
+</style>
+</head>
+<body>
+
+<div id="toast"></div>
+<div id="loader-overlay">
+  <div class="spinner"></div>
+  <p id="loader-text">사진을 안전하게 업로드하고 있습니다...</p>
+</div>
+
+<!-- ★ 샘플 배경음악 (피아노 연주곡) 입니다. 본인의 mp3 파일 이름이나 링크로 반드시 교체하세요 ★ -->
+<audio id="bgm" loop preload="metadata" autoplay>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg">
+</audio>
+
+<div class="wrap">
+
+<button class="bgm-btn" id="bgm-btn">
+  <i class="fas fa-music" id="disc-i"></i>
+  <span id="bgm-lbl">음악 켜기</span>
+</button>
+
+<button id="top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="맨 위로">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ── HERO ── -->
+<section style="padding:0;border:none;height:100vh;height:100dvh;position:relative;overflow:hidden;">
+  <div class="hero-photo" id="hero-photo"></div>
+  <div class="hero-veil"></div>
+  <div id="petal-c"></div>
+  <div class="hero-body">
+    <p class="hero-eyebrow">Wedding Invitation</p>
+    <h1 class="hero-names">남국<span class="hero-amp">&</span>지선</h1>
+    <p class="hero-tagline">서로를 향한 따뜻한 믿음이<br>평생의 약속이 되었습니다</p>
+    <div class="hero-info-box">
+      <p class="hero-date">2025년 9월 12일 토요일 낮 12시 30분</p>
+      <p class="hero-date-sub">2025 · 9 · 12 &nbsp;·&nbsp; Set 12:30</p>
+      <div class="hero-divider-dot">
+        <span></span><span></span><span></span>
+      </div>
+      <p class="hero-venue">파티움하우스 수원</p>
+      <p class="hero-venue-sub">2층 그레이스켈리홀</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── INVITATION ── -->
+<section>
+  <span class="lbl rv">
+    <span class="lbl-kr">소중한 분들을 초대합니다</span>
+    <span class="lbl-en">Invitation</span>
+  </span>
+  <div class="orn rv d1"><i class="fas fa-leaf"></i></div>
+  <div style="margin:44px 0;">
+    <p class="inv-text rv d2">11번의 봄을 지나<br>오랜 시간 예쁜 만남을 이어왔습니다.</p>
+    <p class="inv-text rv d2" style="margin-top:40px;">함께할 때 가장 나다워지는 사람과<br>이제 평생을 함께 걸어가려 합니다.</p>
+    <p class="inv-text rv d3" style="margin-top:40px;">저희 두 사람의 새로운 시작을<br>따뜻한 마음으로 축복해 주시면<br>큰 기쁨으로 간직하겠습니다.</p>
+  </div>
+  <div class="orn rv"><i class="fas fa-leaf"></i></div>
+  <div class="inv-families rv">
+    <div class="fam-row">
+      <span class="fam-par">김찬기 · 오현주</span>
+      <span class="fam-rel">의 장남</span>
+      <span class="fam-name">남국</span>
+    </div>
+    <div class="fam-row">
+      <span class="fam-par">김표근 · 박수하</span>
+      <span class="fam-rel">의 장녀</span>
+      <span class="fam-name">지선</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── STORY TIMELINE ── -->
+<section style="background:var(--bg2);">
+  <span class="lbl rv">
+    <span class="lbl-kr">우리의 이야기</span>
+    <span class="lbl-en">Our Story</span>
+  </span>
+  <div class="story-wrap rv">
+    <div class="story-line"></div>
+    <div class="story-node">
+      <div class="story-nd"></div>
+      <p class="story-when">Our First Meeting</p>
+      <p class="story-ttl">우리의 첫 만남</p>
+      <p class="story-desc">어색했지만 왠지 모르게 끌렸던 그날,<br>우리는 서로에게 특별한 인연이 될 것임을<br>어렴풋이 직감했습니다.</p>
+    </div>
+    <div class="story-node">
+      <div class="story-nd"></div>
+      <p class="story-when">Walking Together</p>
+      <p class="story-ttl">함께 걷는 길</p>
+      <p class="story-desc">맛있는 것, 좋은 곳을 함께 나누며<br>평범한 일상 속에서 서로의 소중함을<br>차곡차곡 깨달아갔습니다.</p>
+    </div>
+    <div class="story-node">
+      <div class="story-nd"></div>
+      <p class="story-when">Always on My Side</p>
+      <p class="story-ttl">서로의 든든한 버팀목</p>
+      <p class="story-desc">기쁠 때나 힘들 때나 가장 먼저 생각나는 사람,<br>변함없는 믿음으로 서로에게 가장 따뜻한<br>안식처가 되었습니다.</p>
+    </div>
+    <div class="story-node">
+      <div class="story-nd final"></div>
+      <p class="story-when">2025 · 9 · 12</p>
+      <p class="story-ttl">영원을 약속합니다</p>
+      <p class="story-desc">이제 두 손을 맞잡고 같은 곳을 바라보며,<br>평생을 함께하려 합니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CALENDAR ── -->
+<section style="background:var(--white);">
+  <div class="lbl-cal rv">
+    <span class="lbl-cal-main">예식일 안내</span>
+    <span class="lbl-cal-sub">2026 &nbsp;·&nbsp; September</span>
+  </div>
+
+  <div class="cal-wrap rv">
+    <div class="cal-grid"><div class="cday-lbl s">S</div><div class="cday-lbl">M</div><div class="cday-lbl">T</div><div class="cday-lbl">W</div><div class="cday-lbl">T</div><div class="cday-lbl">F</div><div class="cday-lbl sa">SA</div>
+      <div class="cday"></div> <div class="cday"></div> <div class="cday">1</div><div class="cday">2</div><div class="cday">3</div><div class="cday">4</div><div class="cday sa">5</div> <div class="cday s">6</div><div class="cday">7</div><div class="cday">8</div><div class="cday">9</div><div class="cday">10</div><div class="cday">11</div>
+<div class="cday w">12</div><div class="cday s">13</div><div class="cday">14</div><div class="cday">15</div><div class="cday">16</div><div class="cday">17</div><div class="cday">18</div><div class="cday sa">19</div>
+      <div class="cday s">20</div><div class="cday">21</div><div class="cday">22</div><div class="cday">23</div><div class="cday">24</div><div class="cday">25</div><div class="cday sa">26</div><div class="cday s">27</div><div class="cday">28</div><div class="cday">29</div><div class="cday">30</div>
+    </div>
+  </div>
+
+  <p class="dday-t rv" id="dday"></p>
+
+  <div class="cal-btn-wrap rv">
+    <button class="cal-btn" onclick="addSmartCalendar()">
+      <i class="far fa-calendar-check"></i> 캘린더에 일정 추가
+    </button>
+  </div>
+</section>
+
+<!-- ── PROGRAM ── -->
+<section style="background:var(--bg2);">
+  <span class="lbl rv">
+    <span class="lbl-kr">예식 순서 안내</span>
+    <span class="lbl-en">Program</span>
+  </span>
+  <ul class="order-list rv">
+    <li>
+      <span class="order-time">12:30</span>
+      <div class="order-txt">하객 입장 및 식사
+        <span class="buffet-highlight">
+          🍽 뷔페 식사는 예식 <strong>전·후 모두</strong> 이용하실 수 있습니다
+        </span>
+        <span class="order-sub" style="background:var(--white);padding:14px 16px;border-radius:6px;border:.5px solid var(--line);margin-top:12px;">
+          <span style="color:var(--rose);font-weight:500;display:flex;align-items:center;gap:6px;margin-bottom:6px;"><i class="fas fa-wine-glass"></i> 여유로운 연회</span>
+          정성껏 준비한 만찬과 함께 곁들이실 수 있도록 와인, 생맥주 등 다채로운 주류를 넉넉하게 준비했습니다.
+        </span>
+      </div>
+    </li>
+    <li class="highlight" style="margin-top:8px;">
+      <span class="order-time">12:55</span>
+      <div class="order-txt">홀 내 입실 완료
+        <span class="order-sub">원활한 예식 진행을 위해 본식 시작 5분 전까지<br>그랜드홀에 입실해 주시면 감사하겠습니다.</span>
+      </div>
+    </li>
+    <li>
+      <span class="order-time">13:00</span>
+      <div class="order-txt">본식 시작
+        <span class="order-sub">2층 단독홀 그랜드홀</span>
+      </div>
+    </li>
+    <li>
+      <span class="order-time">14:00</span>
+      <div class="order-txt">예식 종료 및 기념 촬영
+        <span class="order-sub">가족·친지 단체 사진 촬영</span>
+      </div>
+    </li>
+    <li>
+      <span class="order-time">15:00</span>
+      <div class="order-txt">전세버스 귀환 출발
+        <span class="order-sub">OO시 노선 출발 예정</span>
+      </div>
+    </li>
+  </ul>
+  <p class="rv" style="font-family:'Noto Sans KR',sans-serif;font-size:12.5px;color:var(--muted);text-align:center;margin-top:24px;line-height:2;font-weight:300;">
+    ※ 예식 진행 상황에 따라 시간이 다소 변동될 수 있습니다
+  </p>
+</section>
+
+<!-- ── RSVP ── -->
+<section class="rsvp-sec">
+  <span class="lbl rv">
+    <span class="lbl-kr">참석 의사 전달</span>
+    <span class="lbl-en">R.S.V.P</span>
+  </span>
+  <p class="rsvp-text rv">귀한 걸음 해주시는 분들을 모시기에<br>부족함이 없도록,<br>참석 여부와 전세버스 탑승 계획을 알려주시면<br>대단히 감사하겠습니다.</p>
+  <button class="btn-solid rv" onclick="openRsvp()">참석 여부 전달하기</button>
+</section>
+
+<!-- ── GALLERY ── -->
+<section>
+  <span class="lbl rv">
+    <span class="lbl-kr">우리의 예쁜 순간들</span>
+    <span class="lbl-en">Gallery</span>
+  </span>
+  <div class="gal-grid rv" id="gal-grid"></div>
+  <p class="gal-hint rv">사진을 터치하시면 크게 보실 수 있습니다</p>
+</section>
+
+<div id="img-modal" onclick="handleImgOutsideClick(event)">
+  <button class="m-close" onclick="closeImg()"><i class="fas fa-times"></i></button>
+  <p id="modal-pnum"></p>
+  <div id="modal-ta">
+    <img id="modal-img" src="" alt="">
+  </div>
+  <p class="m-hint">← 좌우 스와이프로 이동 &nbsp;·&nbsp; 아래로 내리면 닫힙니다</p>
+</div>
+
+<!-- ── LOCATION ── -->
+<section>
+  <span class="lbl rv">
+    <span class="lbl-kr">오시는 길</span>
+    <span class="lbl-en">Location</span>
+  </span>
+
+  <div class="venue-name-box rv">
+    <span class="venue-name-kr">행복웨딩홀</span>
+    <span class="venue-name-hall">2층 그랜드홀</span>
+  </div>
+  <p class="venue-addr rv">
+    서울 강남구 행복로 100<br>
+    행복빌딩 <strong style="color:var(--ink);font-weight:500;">본관 2층</strong>
+  </p>
+
+  <div class="map-wrap rv">
+    <div class="map-overlay" id="map-overlay" onclick="enableMap()">
+      <i class="fas fa-hand-pointer"></i>
+      <p>터치하여 지도를 확인하세요<br><span style="font-size:12px;opacity:.7;">두 손가락으로 이동 · 확대하실 수 있습니다</span></p>
+    </div>
+    <!-- ★ 구글 맵 (서울시청 검색 결과) ★ -->
+    <iframe
+      id="map-iframe"
+      class="map-f"
+      src="https://maps.google.com/maps?q=서울시청&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="예식장 위치">
+    </iframe>
+  </div>
+
+  <div class="map-btns rv">
+    <!-- ★ 카카오맵, 네이버지도, 티맵 (모두 서울시청으로 연결) ★ -->
+    <a href="https://map.kakao.com/link/search/서울시청" target="_blank" class="mbtn ka">카카오맵</a>
+    <a href="https://m.map.naver.com/search2/search.naver?query=서울시청" target="_blank" class="mbtn na">네이버지도</a>
+    <button onclick="openTmap()" class="mbtn tm">티맵</button>
+  </div>
+
+  <!-- 지하철 -->
+  <div class="trans-box rv" style="margin-top:40px;">
+    <div class="trans-hdr"><i class="fas fa-train-subway"></i>지하철 및 셔틀버스 이용시</div>
+    <div class="trans-row">
+      <span class="dot">·</span>
+      <div>
+        <div style="margin-bottom:4px;"><span class="badge bdg-1">1호선</span><span class="badge bdg-2">2호선</span> <strong>행복역</strong> 7번 출구</div>
+        <div class="trans-desc">- 예식 당일 <strong>무료 셔틀버스 운행</strong> (약 10분 간격)</div>
+        <div class="trans-desc">- [도보시] 7번 출구에서 직진 후 도보 8분 거리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 버스 -->
+  <div class="trans-box rv">
+    <div class="trans-hdr"><i class="fas fa-bus"></i>시내 및 광역버스 이용시</div>
+    <div class="trans-row">
+      <span class="dot">·</span>
+      <div>
+        <div style="margin-bottom:8px;"><strong>사랑동주민센터 정류장 하차</strong> <span style="font-size:12.5px;color:var(--muted);">(12-345)</span></div>
+        <div style="margin-bottom:6px;"><span class="badge bdg-bus-b">간선버스</span> 144, 402 <span style="font-size:12.5px;color:var(--muted);">(웨딩홀 바로 앞)</span></div>
+        <div style="margin-bottom:6px;"><span class="badge bdg-bus-g">지선버스</span> 3011, 4212 <span style="font-size:12.5px;color:var(--muted);">(도보 2분)</span></div>
+        <div><span class="badge bdg-bus-r">광역버스</span> 9401, 9711 <span style="font-size:12.5px;color:var(--muted);">(사거리 하차 도보 5분)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 자가용 & 주차 -->
+  <div class="trans-box rv">
+    <div class="trans-hdr"><i class="fas fa-car"></i>자가용 이용 및 주차 안내</div>
+
+    <div class="trans-row">
+      <span class="dot">·</span>
+      <div>
+        <div style="margin-bottom:4px;"><strong>내비게이션</strong></div>
+        <div class="trans-desc" style="color:var(--ink);font-weight:500;font-size:15px;">"행복로 100" 또는 "행복웨딩홀"</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;">
+      <p class="pk-title"><i class="fas fa-square-parking"></i> 주차 안내</p>
+      <div class="pk-free-badge">무료 주차 2시간 지원</div>
+      <div class="pk-grid">
+        <div class="pk-card-sm">
+          <div class="pk-icon">🏢</div>
+          <span class="pk-label">건물 내부 주차장</span>
+          <p class="pk-detail-sm">B1 ~ B3층<br>정문으로 진입</p>
+        </div>
+        <div class="pk-card-sm">
+          <div class="pk-icon">🅿️</div>
+          <span class="pk-label">제2 외부 주차장</span>
+          <p class="pk-detail-sm">만차 시 이용<br>도보 약 3분</p>
+        </div>
+      </div>
+      <div class="pk-note">
+        <p><strong>주차 등록</strong>은 연회장 입구 또는 1층 안내데스크에서 해주세요.<br>주말 예식 시간대에는 주변 도로가 혼잡할 수 있으니 가급적 <strong>대중교통 이용을 권장</strong>드립니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 전세버스 -->
+  <div class="trans-box rv">
+    <div class="trans-hdr"><i class="fas fa-bus-simple"></i>전세버스 및 귀가 버스</div>
+
+    <div class="bus-card">
+      <p class="bus-card-title"><i class="fas fa-location-dot"></i> OO시 노선</p>
+      <div class="bus-info-row">
+        <span class="bus-info-key">일시</span>
+        <span>12월 25일(수) <strong style="color:var(--sage);">오전 8시 30분</strong> 정시 출발</span>
+      </div>
+      <div class="bus-info-row">
+        <span class="bus-info-key">장소</span>
+        <span><strong>OO시청 정문 앞</strong></span>
+      </div>
+      <div class="bus-info-row">
+        <span class="bus-info-key">인솔</span>
+        <span>이안내 &nbsp;<a href="tel:010-0000-0000" style="color:var(--ink);font-weight:500;text-decoration:underline;text-underline-offset:3px;">010-0000-0000</a></span>
+      </div>
+
+      <div class="bus-return">
+        <p class="bus-return-t"><i class="fas fa-rotate-left"></i> 귀가 버스</p>
+        <p>예식 종료 후 <strong>오후 3시경</strong> 현장에서<br>OO시 방면으로 출발 예정입니다.<br>인솔자의 안내에 따라 탑승해 주세요.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:16px;font-family:'Noto Sans KR',sans-serif;font-size:13px;line-height:2.1;color:var(--muted);word-break:keep-all;">
+      정시 출발 예정이오니 <strong style="color:var(--ink);">출발 10분 전</strong>까지 탑승 완료 부탁드립니다.
+    </p>
+  </div>
+</section>
+
+<!-- ── REGISTRY ── -->
+<section class="reg-sec hide-privacy">
+  <span class="lbl rv">
+    <span class="lbl-kr">마음 전하실 곳</span>
+    <span class="lbl-en">Registry</span>
+  </span>
+  <div class="rv">
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc('gr')" id="gr-btn">
+        <span>신랑측 계좌번호 보기</span>
+        <i class="fas fa-plus" id="gr-i"></i>
+      </button>
+      <div class="acc-body" id="gr">
+        <div class="acc-row">
+          <div><p class="acc-lbl">혼주 김부친</p><p class="acc-num">국민 123456-01-789012</p></div>
+          <div class="acc-btns"><button class="copy-btn" onclick="cpCopy('12345601789012','국민은행 123456-01-789012')">복사</button></div>
+        </div>
+        <div class="acc-row">
+          <div><p class="acc-lbl">혼주 이모친</p><p class="acc-num">우리 1002-123-456789</p></div>
+          <div class="acc-btns"><button class="copy-btn" onclick="cpCopy('1002123456789','우리은행 1002-123-456789')">복사</button></div>
+        </div>
+        <div class="acc-row">
+          <div><p class="acc-lbl">신랑 김남국</p><p class="acc-num">국민 226402-04-156000</p></div>
+          <div class="acc-btns">
+            <button class="kpay-btn" onclick="openKakao('groom')">카카오페이</button>
+            <button class="copy-btn f" onclick="cpCopy('110123456789','신한은행 110-123-456789')">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="acc-item">
+      <button class="acc-btn" onclick="toggleAcc('br')" id="br-btn">
+        <span>신부측 계좌번호 보기</span>
+        <i class="fas fa-plus" id="br-i"></i>
+      </button>
+      <div class="acc-body" id="br">
+        <div class="acc-row">
+          <div><p class="acc-lbl">혼주 김찬기</p><p class="acc-num">기업 123-456789-01-011</p></div>
+          <div class="acc-btns"><button class="copy-btn" onclick="cpCopy('12345678901011','기업은행 123-456789-01-011')">복사</button></div>
+        </div>
+        <div class="acc-row">
+          <div><p class="acc-lbl">혼주 김표근</p><p class="acc-num">농협 301-1234-5678-01</p></div>
+          <div class="acc-btns"><button class="copy-btn" onclick="cpCopy('3011234567801','농협 301-1234-5678-01')">복사</button></div>
+        </div>
+        <div class="acc-row">
+          <div><p class="acc-lbl">신부 김지선</p><p class="acc-num">iM뱅크 054-08-065056-5</p></div>
+          <div class="acc-btns">
+            <button class="kpay-btn" onclick="openKakao('bride')">카카오페이</button>
+            <button class="copy-btn f" onclick="cpCopy('12345678912345','하나은행 123-456789-12345')">복사</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHOTO SHARE ── -->
+<section>
+  <input type="file" id="photo-up" accept="image/*,video/*" multiple style="display:none;">
+  <div class="share-card rv">
+    <span class="lbl" style="margin-bottom:14px;">
+      <span class="lbl-kr">사진 공유하기</span>
+      <span class="lbl-en">Memory</span>
+    </span>
+    <p class="share-p" style="margin-top:24px;">예식 당일, 하객분들의 따뜻한 시선으로 담아주신<br>소중한 순간들을 아래 버튼을 통해<br>보내 주시면 정말 기쁘게 간직하겠습니다.</p>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
+      <button class="up-btn" id="up-btn" style="padding:15px;">
+        <i class="fas fa-camera"></i>
+        <span style="font-size:14px;">간편하게 보내기 (10MB 이하)</span>
+      </button>
+      <button class="up-btn" id="drive-btn" style="padding:15px;background:var(--white);border-color:rgba(184,131,106,0.3);">
+        <i class="fab fa-google-drive" style="color:var(--rose);"></i>
+        <span style="font-size:14px;">고화질 원본 보내기 (구글 드라이브)</span>
+      </button>
+    </div>
+    <div style="background:rgba(184,131,106,.06);border:.5px solid rgba(184,131,106,.2);border-radius:6px;padding:14px 16px;text-align:left;">
+      <p style="font-family:'Noto Sans KR',sans-serif;font-size:12.5px;color:var(--ink);font-weight:400;line-height:1.7;word-break:keep-all;">
+        <i class="fas fa-info-circle" style="color:var(--rose);margin-right:4px;font-size:12px;"></i>
+        <strong>동영상이나 고화질 원본 사진</strong>은 <strong style="color:var(--rose);">구글 드라이브</strong> 버튼을 이용해 주시면 감사하겠습니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="orn" style="margin-bottom:40px;"><i class="fas fa-leaf" style="font-size:7px;color:rgba(155,180,166,.4);margin:0 14px;"></i></div>
+  <p class="foot-quote">
+    저희의 새로운 시작을 알리는 소중한 초대이기에,<br>
+    설레는 마음을 담아 한 글자 한 글자<br>
+    <strong>두 사람이 직접 디자인하고 만든 청첩장입니다.</strong><br>
+    귀한 시간 내어 축복해 주시는 모든 분들께<br>
+    깊은 감사의 마음을 전합니다.
+  </p>
+  <p class="foot-credit">Designed & Coded by 신랑 & 신부</p>
+  <div class="orn" style="margin-bottom:40px;"><i class="fas fa-leaf" style="font-size:7px;color:rgba(155,180,166,.4);margin:0 14px;"></i></div>
+  <button class="foot-share" onclick="shareKakao()"><i class="fas fa-comment" style="color:#FEE500;font-size:15px;"></i>&nbsp; 카카오톡으로 공유하기</button>
+  <button class="foot-share" onclick="cpUrl()"><i class="fas fa-link" style="color:rgba(253,250,245,.3);font-size:14px;"></i>&nbsp; 청첩장 주소 복사하기</button>
+  <p class="foot-copy">Cheolsoo & Younghee · 2030</p>
+</footer>
+
+<!-- ── RSVP MODAL ── -->
+<div id="rsvp-modal" onclick="handleRsvpOutsideClick(event)">
+  <div class="m-box">
+    <div class="m-head">
+      <h3>참석 정보 전달</h3>
+      <button type="button" onclick="closeRsvp()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="m-scroll">
+      <form id="rsvp-form" onsubmit="submitRsvp(event)">
+        <div class="fg2 fg">
+          <div>
+            <label class="fl">구분</label>
+            <div class="frg">
+              <input type="radio" id="s-g" name="side" value="신랑측" required>
+              <label for="s-g">신랑측</label>
+              <input type="radio" id="s-b" name="side" value="신부측">
+              <label for="s-b">신부측</label>
+            </div>
+          </div>
+          <div>
+            <label class="fl" for="nm">성함</label>
+            <input type="text" id="nm" name="name" class="fi" required placeholder="성함을 입력해 주세요">
+          </div>
+        </div>
+        <div class="fg2 fg">
+          <div>
+            <label class="fl">동반 인원</label>
+            <select name="companion" class="fs">
+              <option value="1명 (본인만)">본인 (1명)</option>
+              <option value="2명">2명</option>
+              <option value="3명">3명</option>
+              <option value="4명">4명</option>
+              <option value="5명 이상">5명 이상</option>
+            </select>
+          </div>
+          <div>
+            <label class="fl">어린이(만5-8세)</label>
+            <select name="child" class="fs">
+              <option value="해당 없음">없음</option>
+              <option value="1명">1명</option>
+              <option value="2명">2명</option>
+              <option value="3명 이상">3명 이상</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label class="fl">참석 여부</label>
+          <div class="frg">
+            <input type="radio" id="at-y" name="attend" value="참석" checked onchange="toggleBus()">
+            <label for="at-y">참석합니다</label>
+            <input type="radio" id="at-n" name="attend" value="마음만" onchange="toggleBus()">
+            <label for="at-n">마음만 전해요</label>
+          </div>
+        </div>
+        <div class="fg" id="bus-sec">
+          <label class="fl">전세버스 탑승</label>
+          <div class="frg" style="flex-wrap:wrap;gap:8px;">
+            <input type="radio" id="bu-n" name="bus" value="이용안함" checked>
+            <label for="bu-n" style="flex:none;padding:12px 14px;">이용 안 함</label>
+            <input type="radio" id="bu-j" name="bus" value="OO탑승">
+            <label for="bu-j" style="flex:none;padding:12px 14px;">OO 탑승</label>
+          </div>
+        </div>
+        <button type="submit" class="sub-btn" id="sub-btn">전송하기</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</div><!-- /.wrap -->
+
+<script>
+const GAS='https://script.google.com/macros/s/YOUR_GOOGLE_APP_SCRIPT_URL/exec';
+
+// ★ 갤러리 이미지 (Unsplash 무료 웨딩 고화질 이미지 임시 데이터) ★
+// 본인의 사진 파일명이나 웹 링크로 수정하여 사용하세요.
+const IMGS=[
+  'https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=600&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=600&auto=format&fit=crop'
+];
+let ci=0, sy=0;
+
+document.addEventListener("DOMContentLoaded", function() {
+  if (document.documentElement.classList.contains('pre-wedding-mask')) {
+    var msg = window.__regOpenMsg || '예식 60일 전부터 확인 가능합니다';
+    document.querySelectorAll('.acc-num').forEach(function(el) {
+      el.textContent = msg;
+      el.style.fontSize = '13px';
+      el.style.color = 'var(--muted)';
+      el.style.letterSpacing = '0';
+    });
+    document.querySelectorAll('.acc-btns button, .acc-btns a').forEach(function(btn) {
+      btn.style.opacity = '0.35';
+      btn.style.cursor = 'not-allowed';
+      btn.removeAttribute('href');
+      btn.onclick = function(e) { e.preventDefault(); };
+    });
+  }
+});
+
+const KPAY_LINKS = {
+  groom: 'https://qr.kakaopay.com/YOUR_GROOM_LINK_HERE',
+  bride: 'https://qr.kakaopay.com/YOUR_BRIDE_LINK_HERE',
+};
+
+function openKakao(who) {
+  const url = KPAY_LINKS[who];
+  if (!url || url.includes('LINK_HERE')) { toast('카카오페이 링크를 아직 설정하지 않았습니다.'); return; }
+  window.open(url, '_blank');
+}
+
+function initGallery(){
+  const g=document.getElementById('gal-grid');
+  g.innerHTML='';
+  IMGS.forEach((s,i)=>{
+    const d=document.createElement('div'); d.className='gal-item'; d.onclick=()=>openImg(i);
+    const im=document.createElement('img'); im.src=s; im.loading='lazy'; im.alt='웨딩 사진 '+(i+1);
+    im.onerror=function(){this.onerror=null;this.src='https://picsum.photos/seed/fallback'+i+'/600/800';};
+    d.appendChild(im); g.appendChild(d);
+  });
+}
+
+function openImg(i){ ci=i; updModal(); document.getElementById('img-modal').classList.add('active'); lock(); }
+function closeImg(){ document.getElementById('img-modal').classList.remove('active'); unlock(); }
+function updModal(){ document.getElementById('modal-img').src=IMGS[ci]; document.getElementById('modal-img').onerror=function(){this.onerror=null;this.src='https://picsum.photos/seed/fallback'+ci+'/600/800';}; document.getElementById('modal-pnum').textContent=`${ci+1} / ${IMGS.length}`; }
+function handleImgOutsideClick(e){ if(!e.target.closest('#modal-img')&&!e.target.closest('.m-close')){closeImg();} }
+
+let tx=0,ty=0;
+document.getElementById('modal-ta').addEventListener('touchstart',e=>{tx=e.changedTouches[0].screenX;ty=e.changedTouches[0].screenY;},{passive:true});
+document.getElementById('modal-ta').addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].screenX-tx, dy=e.changedTouches[0].screenY-ty;
+  if(dy>100&&Math.abs(dy)>Math.abs(dx)){closeImg();return;}
+  if(dx<-60){ci=(ci+1)%IMGS.length;updModal();}
+  if(dx>60){ci=(ci-1+IMGS.length)%IMGS.length;updModal();}
+},{passive:true});
+
+function lock(){ sy=window.pageYOffset; document.body.style.overflow='hidden'; document.body.style.position='fixed'; document.body.style.top='-'+sy+'px'; document.body.style.width='100%'; }
+function unlock(){ document.body.style.removeProperty('overflow'); document.body.style.removeProperty('position'); document.body.style.removeProperty('top'); document.body.style.removeProperty('width'); window.scrollTo(0,sy); }
+
+function initPetals(){
+  const c=document.getElementById('petal-c');
+  const colors=['rgba(212,168,146,.55)','rgba(184,131,106,.45)','rgba(155,180,166,.4)','rgba(247,242,234,.5)'];
+  for(let i=0;i<14;i++){
+    const p=document.createElement('div'); p.className='petal';
+    const sz=Math.random()*5+3;
+    const col=colors[Math.floor(Math.random()*colors.length)];
+    p.style.cssText=`width:${sz}px;height:${sz*1.4}px;background:${col};left:${Math.random()*100}%;animation-duration:${Math.random()*10+10}s;animation-delay:${Math.random()*-18}s;--px:${(Math.random()-.5)*60}px;`;
+    c.appendChild(p);
+  }
+}
+
+function initDday(){
+  const w=new Date('2030-12-25T00:00:00'), t=new Date(); t.setHours(0,0,0,0);
+  const d=Math.round((w-t)/86400000), el=document.getElementById('dday');
+  if(d>0) el.innerHTML=`결혼식까지 <strong>${d}</strong>일 남았습니다`;
+  else if(d===0) el.innerHTML=`결혼식이 <strong>오늘</strong>입니다`;
+  else el.textContent='축복 속에 결혼식을 무사히 마쳤습니다';
+}
+
+const audio=document.getElementById('bgm');
+const discI=document.getElementById('disc-i');
+const bgmLbl=document.getElementById('bgm-lbl');
+audio.volume=0.35;
+let bgmStarted=false;
+
+/* ★ 음악 스윙 애니메이션 적용 ★ */
+const updateBgmUI=(isPlaying)=>{
+  if(isPlaying){ discI.style.animation='swing 2s ease-in-out infinite'; bgmLbl.textContent='음악 끄기'; }
+  else{ discI.style.animation='none'; bgmLbl.textContent='음악 켜기'; }
+};
+
+const startAudio=()=>{
+  if(bgmStarted)return;
+  audio.play().then(()=>{bgmStarted=true;updateBgmUI(true);['touchstart','click','scroll'].forEach(e=>document.removeEventListener(e,startAudio));}).catch(()=>{});
+};
+
+audio.play().then(()=>{bgmStarted=true;updateBgmUI(true);}).catch(()=>{
+  ['touchstart','click','scroll'].forEach(e=>document.addEventListener(e,startAudio,{passive:true}));
+});
+
+document.getElementById('bgm-btn').addEventListener('click',(e)=>{
+  e.stopPropagation(); bgmStarted=true;
+  if(audio.paused){audio.play().then(()=>updateBgmUI(true)).catch(()=>toast('🎵 음악 파일을 찾을 수 없습니다.'));}
+  else{audio.pause();updateBgmUI(false);}
+});
+
+window.addEventListener('scroll',()=>{
+  const p=document.getElementById('hero-photo'),y=window.pageYOffset;
+  if(y<window.innerHeight) p.style.transform=`scale(1.05) translateY(${y*.28}px)`;
+  document.getElementById('top-btn').classList.toggle('visible', y>300);
+},{passive:true});
+
+const ro=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+function toggleAcc(id){
+  const body=document.getElementById(id),btn=document.getElementById(id+'-btn'),icon=document.getElementById(id+'-i');
+  const isOpen=body.style.display==='block';
+  ['gr','br'].forEach(k=>{document.getElementById(k).style.display='none';document.getElementById(k+'-btn').classList.remove('open');document.getElementById(k+'-i').style.transform='';});
+  if(!isOpen){body.style.display='block';btn.classList.add('open');icon.style.transform='rotate(45deg)';}
+}
+
+function enableMap(){ document.getElementById('map-overlay').classList.add('hidden'); setTimeout(()=>toast('두 손가락으로 지도를 이동하실 수 있습니다'), 400); }
+/* ★ 티맵 연결 (파티움하우스 수원) ★ */
+function openTmap(){ if(!/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)){alert('티맵은 스마트폰에서 이용해 주세요.');return;} window.location.href='tmap://search?name='+encodeURIComponent('파티움하우스 수원'); }
+function openRsvp(){ document.getElementById('rsvp-modal').classList.add('open'); lock(); }
+function closeRsvp(){ document.getElementById('rsvp-modal').classList.remove('open'); document.getElementById('rsvp-form').reset(); document.getElementById('bus-sec').style.display='block'; unlock(); }
+function toggleBus(){ document.getElementById('bus-sec').style.display=document.querySelector('input[name="attend"]:checked').value==='마음만'?'none':'block'; }
+function handleRsvpOutsideClick(e){ if(!e.target.closest('.m-box')){closeRsvp();} }
+
+function submitRsvp(e){
+  e.preventDefault();
+  if (GAS.includes('YOUR_GOOGLE')) { alert('구글 앱스 스크립트(GAS) URL이 설정되지 않았습니다.'); return; }
+  if(localStorage.getItem('rsvp_v2')){
+    if(!confirm('이미 참석 정보를 전달해 주신 적이 있습니다.\n수정하여 다시 전송하시겠습니까?')){closeRsvp();return;}
+  }
+  const btn=document.getElementById('sub-btn');
+  btn.textContent='전송 중...'; btn.disabled=true;
+  fetch(GAS,{method:'POST',mode:'no-cors',body:new FormData(e.target)})
+    .then(()=>{localStorage.setItem('rsvp_v2','1');closeRsvp();toast('참석 정보가 성공적으로 전달되었습니다. 감사합니다!');})
+    .catch(()=>alert('전송 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.'))
+    .finally(()=>{btn.textContent='전송하기';btn.disabled=false;});
+}
+
+function addSmartCalendar() {
+  const ua = navigator.userAgent.toLowerCase();
+  const isIOS = /iphone|ipad|ipod|mac/.test(ua);
+  const title = "남국 ♥ 지선 결혼식";
+  const loc = "경기 수원시 팔달구 효원로 289 파티움하우스 수원";
+  const desc = "지하철: 수원시청역 10번 출구 / 주차: 건물 내 B1~B3 주차장 이용";
+  if (isIOS) {
+    const icsMSG="BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Wedding//EN\nCALSCALE:GREGORIAN\nBEGIN:VEVENT\nDTSTART:20301225T040000Z\nDTEND:20301225T060000Z\nSUMMARY:"+title+"\nLOCATION:"+loc+"\nDESCRIPTION:"+desc+"\nEND:VEVENT\nEND:VCALENDAR";
+    window.location.href="data:text/calendar;charset=utf-8,"+encodeURIComponent(icsMSG);
+  } else {
+    window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=20301225T040000Z/20301225T060000Z&location=${encodeURIComponent(loc)}&details=${encodeURIComponent(desc)}`,'_blank');
+  }
+}
+
+const checkUploadDate=()=>{
+  const uploadStartDate=new Date('2030-12-25T00:00:00+09:00');
+  if(new Date()<uploadStartDate){toast('사진 업로드는 예식 당일(9월 12일)부터 가능합니다. 📸');return false;}
+  return true;
+};
+
+const photoUp=document.getElementById('photo-up');
+const upBtn=document.getElementById('up-btn');
+const driveBtn=document.getElementById('drive-btn');
+const loaderOverlay=document.getElementById('loader-overlay');
+const loaderText=document.getElementById('loader-text');
+
+upBtn.addEventListener('click',()=>{ if(GAS.includes('YOUR_GOOGLE')){toast('설정에서 구글 스크립트 주소를 입력하세요.');return;} if(checkUploadDate())photoUp.click(); });
+driveBtn.addEventListener('click',()=>{ if(checkUploadDate()) window.open('https://drive.google.com/drive/folders/YOUR_DRIVE_FOLDER_ID?usp=share_link','_blank'); });
+
+photoUp.addEventListener('change',async e=>{
+  const files=e.target.files; if(!files.length)return;
+  const MAX=10*1024*1024; let big=false,ok=0;
+  lock(); loaderOverlay.classList.add('active');
+  try{
+    for(let i=0;i<files.length;i++){
+      const f=files[i]; if(f.size>MAX){big=true;continue;}
+      loaderText.textContent=`사진을 안전하게 업로드하고 있습니다... (${i+1}/${files.length})`;
+      try{
+        const b64=await toB64(f); const fd=new FormData();
+        fd.append('action','upload');fd.append('fileName',f.name);fd.append('mimeType',f.type);fd.append('fileData',b64.split(',')[1]);
+        await fetch(GAS,{method:'POST',mode:'no-cors',body:fd}); ok++;
+      }catch(err){console.error(err);}
+    }
+  }finally{loaderOverlay.classList.remove('active');unlock();photoUp.value='';}
+  if(big&&ok>0) toast(`${ok}장 저장 완료! 10MB가 넘는 사진/영상은 구글 드라이브를 이용해 주세요.`);
+  else if(big&&ok===0) toast('용량이 10MB를 초과합니다. 구글 드라이브 버튼을 이용해 주세요!');
+  else if(ok>0) toast(`소중한 사진 ${ok}장이 안전하게 저장되었습니다. 감사합니다!`);
+});
+
+function toB64(f){return new Promise((res,rej)=>{const r=new FileReader();r.readAsDataURL(f);r.onload=()=>res(r.result);r.onerror=rej;});}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.className='show';setTimeout(()=>t.className='',3000);}
+
+function cpCopy(num,label){
+  if(document.documentElement.classList.contains('pre-wedding-mask'))return;
+  const cb=()=>toast((label||num)+' 복사되었습니다.');
+  if(navigator.clipboard){navigator.clipboard.writeText(num).then(cb);}
+  else{const el=document.createElement('textarea');el.value=num;document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el);cb();}
+}
+
+function cpUrl(){
+  const u=window.location.href;
+  const cb=()=>toast('청첩장 주소가 복사되었습니다.');
+  if(navigator.clipboard){navigator.clipboard.writeText(u).then(cb);}
+  else{const el=document.createElement('textarea');el.value=u;document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el);cb();}
+}
+
+function shareKakao(){
+  if(typeof Kakao==='undefined'){cpUrl();return;}
+  const kakaoAppKey='YOUR_KAKAO_APP_KEY';
+  if(kakaoAppKey.includes('YOUR_KAKAO')){toast('카카오 앱 키가 설정되지 않았습니다.');cpUrl();return;}
+  if(!Kakao.isInitialized()){try{Kakao.init(kakaoAppKey);}catch(e){cpUrl();return;}}
+  Kakao.Share.sendDefault({
+    objectType:'feed',
+    content:{
+      title:'남국 ♥ 지선 결혼합니다',
+      description:'2026년 9월 12일 (토) 낮 12시 30분 · 파티움하우스 수원',
+      imageUrl:'https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800&auto=format&fit=crop',
+      link:{mobileWebUrl:'https://your-domain.com/',webUrl:'https://your-domain.com/'}
+    },
+    buttons:[{title:'청첩장 보기',link:{mobileWebUrl:'https://your-domain.com/',webUrl:'https://your-domain.com/'}}]
+  });
+}
+
+document.addEventListener('DOMContentLoaded',()=>{initPetals();initGallery();initDday();});
+</script>
+</body>
+</html>
