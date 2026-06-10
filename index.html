@@ -1053,7 +1053,7 @@ function addSmartCalendar() {
 }
 
 const checkUploadDate=()=>{
-  const uploadStartDate=new Date('2026-09-12T00:00:00+09:00');
+  const uploadStartDate=new Date('');
   if(new Date()<uploadStartDate){toast('사진 업로드는 예식 당일(9월 12일)부터 가능합니다. 📸');return false;}
   return true;
 };
