@@ -17,7 +17,7 @@
   (function() {
     var today = new Date();
     var weddingDate = new Date('2026-09-12T12:30:00+09:00');
-    var showStart = new Date(weddingDate);
+    var showStart = new Date(2025-01-01);
     showStart.setDate(weddingDate.getDate() - 60);
     showStart.setHours(0, 0, 0, 0);
     var showEnd = new Date('2026-09-12T00:00:00');
@@ -25,7 +25,7 @@
       document.documentElement.classList.add('post-wedding');
     } else if (today < showStart) {
       document.documentElement.classList.add('pre-wedding-mask');
-      window.__regOpenMsg = (showStart.getMonth(6) + 1) + '월 ' + showStart.getDate(10) + '일부터 확인 가능합니다';
+      window.__regOpenMsg = (showStart.getMonth() + 1) + '월 ' + showStart.getDate() + '일부터 확인 가능합니다';
     }
   })();
 </script>
