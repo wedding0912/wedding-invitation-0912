@@ -1065,7 +1065,7 @@ const loaderOverlay=document.getElementById('loader-overlay');
 const loaderText=document.getElementById('loader-text');
 
 upBtn.addEventListener('click',()=>{ if(GAS.includes('YOUR_GOOGLE')){toast('설정에서 구글 스크립트 주소를 입력하세요.');return;} if(checkUploadDate())photoUp.click(); });
-driveBtn.addEventListener('click',()=>{ if(checkUploadDate()) window.open('https://drive.google.com/drive/folders/0B1U_wj0xUr-8d25NQmlmX2toVzA?hl=ko&resourcekey=0-kdTt3rQF3TQLroOi0RCi2Q?usp=share_link','_blank'); });
+driveBtn.addEventListener('click',()=>{ if(checkUploadDate()) window.open('https://drive.google.com/drive/folders/0B1U_wj0xUr-8d25NQmlmX2toVzA','_blank'); });
 
 photoUp.addEventListener('change',async e=>{
   const files=e.target.files; if(!files.length)return;
