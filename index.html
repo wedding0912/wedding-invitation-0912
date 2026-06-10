@@ -883,7 +883,7 @@ footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
 </div><!-- /.wrap -->
 
 <script>
-const GAS='https://script.google.com/macros/s/YOUR_GOOGLE_APP_SCRIPT_URL/exec';
+const GAS='https://script.google.com/macros/s/AKfycbw_EVajdaKzqNJsvOmMb5SxtV1ubEVgcx-A-BwighEUL2C1WGPUrvRIrirT96ywMmTX9Q/exec';
 
 // ★ 갤러리 이미지 (Unsplash 무료 웨딩 고화질 이미지 임시 데이터) ★
 // 본인의 사진 파일명이나 웹 링크로 수정하여 사용하세요.
@@ -1065,7 +1065,7 @@ const loaderOverlay=document.getElementById('loader-overlay');
 const loaderText=document.getElementById('loader-text');
 
 upBtn.addEventListener('click',()=>{ if(GAS.includes('YOUR_GOOGLE')){toast('설정에서 구글 스크립트 주소를 입력하세요.');return;} if(checkUploadDate())photoUp.click(); });
-driveBtn.addEventListener('click',()=>{ if(checkUploadDate()) window.open('https://drive.google.com/drive/folders/YOUR_DRIVE_FOLDER_ID?usp=share_link','_blank'); });
+driveBtn.addEventListener('click',()=>{ if(checkUploadDate()) window.open('https://drive.google.com/drive/folders/0B1U_wj0xUr-8d25NQmlmX2toVzA?hl=ko&resourcekey=0-kdTt3rQF3TQLroOi0RCi2Q?usp=share_link','_blank'); });
 
 photoUp.addEventListener('change',async e=>{
   const files=e.target.files; if(!files.length)return;
