@@ -436,16 +436,6 @@ footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
   </div>
 </section>
 
-  <!-- ── RSVP ── -->
-<section class="rsvp-sec">
-  <span class="lbl rv">
-    <span class="lbl-kr">참석 의사 전달</span>
-    <span class="lbl-en">R.S.V.P</span>
-  </span>
-  <p class="rsvp-text rv">모시기에 부족함이 없도록,<br>참석 여부와 전세버스 탑승 계획을 알려주시면<br>대단히 감사하겠습니다.</p>
-  <button class="btn-solid rv" onclick="openRsvp()">참석 여부 전달하기</button>
-</section>
-
 <!-- ── GALLERY ── -->
 <section>
   <span class="lbl rv">
@@ -744,7 +734,7 @@ footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
 <div id="rsvp-modal" onclick="handleRsvpOutsideClick(event)">
   <div class="m-box">
     <div class="m-head">
-      <h3>참석 정보 전달</h3>
+      <h3>전세버스 탑승여부</h3>
       <button type="button" onclick="closeRsvp()"><i class="fas fa-times"></i></button>
     </div>
     <div class="m-scroll">
@@ -766,7 +756,7 @@ footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
         </div>
         <div class="fg2 fg">
           <div>
-            <label class="fl">동반 인원</label>
+            <label class="fl">탑승 인원</label>
             <select name="companion" class="fs">
               <option value="1명 (본인만)">본인 (1명)</option>
               <option value="2명">2명</option>
@@ -775,32 +765,13 @@ footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
               <option value="5명 이상">5명 이상</option>
             </select>
           </div>
-          <div>
-            <label class="fl">어린이(만5-8세)</label>
-            <select name="child" class="fs">
-              <option value="해당 없음">없음</option>
-              <option value="1명">1명</option>
-              <option value="2명">2명</option>
-              <option value="3명 이상">3명 이상</option>
-            </select>
           </div>
         </div>
-        <div class="fg">
-          <label class="fl">참석 여부</label>
-          <div class="frg">
-            <input type="radio" id="at-y" name="attend" value="참석" checked onchange="toggleBus()">
-            <label for="at-y">참석합니다</label>
-            <input type="radio" id="at-n" name="attend" value="마음만" onchange="toggleBus()">
-            <label for="at-n">마음만 전해요</label>
-          </div>
         </div>
        <div class="fg" id="bus-sec">
   <label class="fl">전세버스 탑승</label>
 
   <div class="frg" style="flex-wrap:wrap;gap:8px;">
-    <input type="radio" id="bu-n" name="bus" value="이용안함" checked>
-    <label for="bu-n" style="flex:none;padding:12px 14px;">이용 안 함</label>
-
     <input type="radio" id="bu-round" name="bus" value="왕복">
     <label for="bu-round" style="flex:none;padding:12px 14px;">왕복 탑승</label>
 
@@ -816,6 +787,16 @@ footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
     </div>
   </div>
 </div>
+  
+  <!-- ── RSVP ── -->
+<section class="rsvp-sec">
+  <span class="lbl rv">
+    <span class="lbl-kr">전세버스 탑승 여부</span>
+    <span class="lbl-en">R.S.V.P</span>
+  </span>
+  <p class="rsvp-text rv">모시기에 부족함이 없도록,<br>전세버스 탑승 계획을 알려주시면<br>대단히 감사하겠습니다.</p>
+  <button class="btn-solid rv" onclick="openRsvp()">탑승 여부 전달하기</button>
+</section>
 
 </div><!-- /.wrap -->
 
