@@ -34,6 +34,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+KR:wght@300;400;500&family=Noto+Sans+KR:wght@300;400;500&family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+.bus-options{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:8px !important;
+}
+
+.bus-options label{
+  width:100% !important;
+  flex:none !important;
+  padding:14px 12px !important;
+}
+
+.bus-options input:checked + label{
+  background:var(--rose);
+  border-color:var(--rose);
+  color:var(--white);
+  font-weight:500;
+}
+  
 <style>
 /* ── RESET & VARIABLES ── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -744,34 +763,25 @@ footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
 <!-- ── RSVP MODAL ── -->
 <div id="rsvp-modal" onclick="handleRsvpOutsideClick(event)">
   <div class="m-box">
-
     <div class="m-head">
       <h3>전세버스 탑승 신청</h3>
       <button type="button" onclick="closeRsvp()">
         <i class="fas fa-times"></i>
       </button>
     </div>
-
     <div class="m-scroll">
-
       <form id="rsvp-form" onsubmit="submitRsvp(event)">
-
         <!-- 구분 / 성함 -->
         <div class="fg2 fg">
           <div>
-
             <label class="fl">구분</label>
-
             <div class="frg">
               <input type="radio" id="s-g" name="side" value="신랑측" required>
               <label for="s-g">신랑측</label>
-
               <input type="radio" id="s-b" name="side" value="신부측">
               <label for="s-b">신부측</label>
             </div>
-
             <label class="fl" for="nm">성함</label>
-
             <input
               type="text"
               id="nm"
@@ -780,16 +790,12 @@ footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
               required
               placeholder="성함을 입력해 주세요"
             >
-
           </div>
         </div>
-
         <!-- 탑승 인원 -->
         <div class="fg2 fg">
           <div>
-
             <label class="fl">탑승 인원</label>
-
             <select name="companion" class="fs">
               <option value="1명 (본인만)">본인 (1명)</option>
               <option value="2명">2명</option>
@@ -797,42 +803,27 @@ footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
               <option value="4명">4명</option>
               <option value="5명 이상">5명 이상</option>
             </select>
-
           </div>
         </div>
-
         <!-- 전세버스 -->
-        <div class="fg" id="bus-sec">
+<div class="fg" id="bus-sec">
+  <label class="fl">전세버스 탑승</label>
 
-          <label class="fl">전세버스 탑승</label>
+  <div class="frg bus-options">
+    <input type="radio" id="bu-round" name="bus" value="왕복" required>
+    <label for="bu-round">왕복 탑승</label>
 
-          <div class="frg" style="flex-wrap:wrap;gap:8px;">
+    <input type="radio" id="bu-down" name="bus" value="대구→수원">
+    <label for="bu-down">대구→수원 탑승</label>
 
-            <input type="radio" id="bu-round" name="bus" value="왕복" required>
-            <label for="bu-round" style="flex:none;padding:12px 14px;">
-              왕복 탑승
-            </label>
-
-            <input type="radio" id="bu-down" name="bus" value="대구→수원">
-            <label for="bu-down" style="flex:none;padding:12px 14px;">
-              대구→수원 탑승
-            </label>
-
-            <input type="radio" id="bu-up" name="bus" value="수원→대구">
-            <label for="bu-up" style="flex:none;padding:12px 14px;">
-              수원→대구 탑승
-            </label>
-
-          </div>
-
-        </div>
-
+    <input type="radio" id="bu-up" name="bus" value="수원→대구">
+    <label for="bu-up">수원→대구 탑승</label>
+  </div>
+</div>
         <button type="submit" class="sub-btn" id="sub-btn">
           전송하기
         </button>
-
       </form>
-
     </div>
   </div>
 </div>
