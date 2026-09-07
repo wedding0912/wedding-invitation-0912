@@ -719,7 +719,7 @@ footer{background:var(--ink);padding:72px 32px 120px;text-align:center;}
       </button>
       <button class="up-btn" id="drive-btn" style="padding:15px;background:var(--white);border-color:rgba(184,131,106,0.3);">
         <i class="fab fa-google-drive" style="color:var(--rose);"></i>
-        <span style="font-size:14px;">고화질 원본 보내기 (구글 드라이브)</span>
+        <span style="font-size:14px;">고화질 원본 보내기 (Drop Box)</span>
       </button>
     </div>
     <div style="background:rgba(184,131,106,.06);border:.5px solid rgba(184,131,106,.2);border-radius:6px;padding:14px 16px;text-align:left;">
@@ -1010,7 +1010,7 @@ const loaderOverlay=document.getElementById('loader-overlay');
 const loaderText=document.getElementById('loader-text');
 
 upBtn.addEventListener('click',()=>{ if(GAS.includes('YOUR_GOOGLE')){toast('설정에서 구글 스크립트 주소를 입력하세요.');return;} if(checkUploadDate())photoUp.click(); });
-driveBtn.addEventListener('click',()=>{ if(checkUploadDate()) window.open('https://drive.google.com/drive/folders/0B1U_wj0xUr-8d25NQmlmX2toVzA','_blank'); });
+driveBtn.addEventListener('click',()=>{ if(checkUploadDate()) window.open('https://www.dropbox.com/request/3irvi521xff11efjsekk','_blank'); });
 
 photoUp.addEventListener('change',async e=>{
   const files=e.target.files; if(!files.length)return;
